@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot using Gemini | AIS Project 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+</head>
+<body class="bg-gray-100 h-screen p-5">
+
+    <!-- Chatbot Header with Logo -->
+    <div class="text-center mb-4 flex flex-col items-center">
+        <img src="https://www.clipartmax.com/png/middle/17-175529_mdc-shark-logo-miami-dade-college-sharks.png" alt="Miami Dade College Logo" class="w-20 h-20 mb-2"> <!-- Adjust the src attribute -->
+        <h1 class="text-3xl font-semibold text-blue-600">Matty's Chatbot - Gemini PRO</h1>
+    </div>
+
+    <!-- Chat Messages Container -->
+    <div id="messageHolder" class="flex flex-col space-y-2 mb-4 p-3 bg-white shadow rounded-lg max-h-[80vh] overflow-y-auto">
+        <!-- Messages will be dynamically inserted here -->
+    </div>
+
+    <!-- Chat Input Area within a Form -->
+<form id="chatForm" class="flex gap-2">
+    <input type="text" id="chat" name="chat" placeholder="Type your message here..." 
+           class="flex-1 p-2 rounded-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500 shadow-sm" required>
+    <button type="submit" id="btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out">
+        Send
+    </button>
+</form>
+
+
+    <script type="importmap">
+    {
+        "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+        }
+    }
+    </script>
+    <script type="module" src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
